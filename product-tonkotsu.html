@@ -5,248 +5,196 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vegetable Tonkotsu Noodle Ramen — United Food Co</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Barlow:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="ufc-product.css">
-  <style>:root{--accent:#C8832A;--accent-pale:#FEF3E2;}</style>
+  <style>:root { --accent: #C8832A; }</style>
 </head>
 <body>
 
-<!-- TOP NAV BAR -->
-<nav class="topbar">
-  <a class="tb-brand" href="index.html">
-    <svg width="22" height="22" viewBox="0 0 40 40" fill="none"><path d="M20 4C12 4 7 10 7 18c0 5 3 9.5 8 12l5 6 5-6c5-2.5 8-7 8-12 0-8-5-14-13-14z" fill="white" opacity="0.15"/><path d="M20 8c-6 0-10 4.5-10 10 0 3.5 1.8 6.8 5 9l5 4.5 5-4.5c3.2-2.2 5-5.5 5-9 0-5.5-4-10-10-10z" fill="white" opacity="0.25"/><text x="12" y="26" font-size="16" fill="white" font-family="serif">🦢</text></svg>
-    <div class="tb-brand-text">
-      <span class="tb-name">United Food Co</span>
-      <span class="tb-sub">Asian Kitchen · Distributor Catalogue</span>
+<!-- HEADER — mirrors "LITTLE FISH CO — RECIPE COSTING SHEET / AVO TOAST" layout -->
+<header class="page-header">
+  <div class="ph-logo">
+    <div class="ph-logo-mark">🦢</div>
+    <div class="ph-logo-text">
+      <span class="ph-logo-name">United Food Co</span>
+      <span class="ph-logo-sub">Asian Kitchen — Product Spec Sheet</span>
     </div>
-  </a>
-  <a class="tb-back" href="index.html">← All Products</a>
-</nav>
+  </div>
+  <div class="ph-title-block">
+    <div class="ph-eyebrow">Vegetable &nbsp;·&nbsp; Plant-Based &nbsp;·&nbsp; SKU 9270</div>
+    <div class="ph-product-name">Vegetable <span class="accent">Tonkotsu</span> Noodle Ramen</div>
+    <div class="ph-meta">
+      <span>20 × 308g bulk</span>
+      <span class="ph-meta-sep">·</span>
+      <span>Cook from frozen</span>
+      <span class="ph-meta-sep">·</span>
+      <span>Product of Vietnam</span>
+      <span class="ph-meta-sep">·</span>
+      <span class="ph-meta-accent">24 month shelf life</span>
+    </div>
+  </div>
+  <a class="ph-back" href="index.html">← Catalogue</a>
+</header>
 
-<!-- MAIN: two-column spec sheet layout -->
-<main class="spec-wrap">
+<div class="header-rule"></div>
 
-  <!-- LEFT COLUMN: sidebar like spec sheet -->
-  <aside class="spec-left">
+<!-- HERO: bowl image + quick facts panel -->
+<div class="hero-section">
+  <div class="hero-bowl-wrap">
+    <img class="hero-bowl" src="images/tonkotsu-bowl.png" alt="Vegetable Tonkotsu Noodle Ramen">
+  </div>
+  <div class="hero-facts">
+    <div class="hf-heading">Cost Summary</div>
+    <div class="hf-row"><span class="hf-label">Item Number</span><span class="hf-value">ORNSPVE20</span></div>
+    <div class="hf-row"><span class="hf-label">Short Code</span><span class="hf-value accent">9270</span></div>
+    <div class="hf-row"><span class="hf-label">Barcode</span><span class="hf-value" style="font-family:'Courier New',monospace;font-size:0.68rem;">9 414118 309336</span></div>
+    <div class="hf-row"><span class="hf-label">Pack size</span><span class="hf-value">308g per unit</span></div>
+    <div class="hf-row"><span class="hf-label">Case size</span><span class="hf-value">20 × 308g NET</span></div>
+    <div class="hf-row"><span class="hf-label">Pallet</span><span class="hf-value">48 ctns (12×4)</span></div>
+    <div class="hf-row"><span class="hf-label">Shelf life</span><span class="hf-value">24 months</span></div>
+    <div class="hf-row"><span class="hf-label">Storage</span><span class="hf-value">≤ −18°C frozen</span></div>
+    <div class="hf-row"><span class="hf-label">Origin</span><span class="hf-value">Vietnam</span></div>
+    <div class="hf-row"><span class="hf-label">Version</span><span class="hf-value" style="color:var(--mid);font-size:0.7rem;">V1.0 · Oct 2025</span></div>
+    <div class="hero-box-wrap">
+      <img class="hero-box" src="images/tonkotsu-box.png" alt="Packaging">
+    </div>
+  </div>
+</div>
 
-    <!-- UFC Logo block -->
-    <div class="sl-logo">
-      <div class="sl-logo-mark">
-        <span class="lm-united">UNITED</span>
-        <span class="lm-food">FOOD</span>
-        <span class="lm-co">CO<span class="lm-dot">.</span></span>
+<div class="lower-rule"></div>
+
+<!-- LOWER: ingredients left, nutrition + pricing right -->
+<div class="lower-section">
+
+  <!-- LEFT COLUMN -->
+  <div class="lower-left">
+
+    <!-- INGREDIENTS section -->
+    <div>
+      <span class="sec-label">Ingredients</span>
+      <table class="spec-table">
+        <thead>
+          <tr><th>Ingredient</th><th style="text-align:left;padding-right:0">Component</th><th>Detail</th></tr>
+        </thead>
+      </table>
+      <p class="ingredients-text">
+        <u>Soy Milk</u> [water, soybean], <u>Ramen Noodles (26%)</u> [<strong>wheat</strong> flour, water, raising agent (500), colour (160a)], <u>Vegetables (18%)</u> [spinach, cabbage, shiitake mushroom, carrot, ear mushroom, spring onion], Konbu [water, kelp], <strong>Soy</strong> Sauce [soybean, <strong>wheat</strong>, salt, alcohol, water], Refined <strong>Soybean</strong> Oil, <strong>Sesame</strong> Butter, Garlic, Salt, Ginger, Sugar, Yeast Extract.
+      </p>
+    </div>
+
+    <!-- ALLERGENS & DIETARY -->
+    <div>
+      <span class="sec-label">Allergens &amp; Dietary</span>
+      <div class="allergen-tags">
+        <span class="allergen-tag">Wheat</span>
+        <span class="allergen-tag">Gluten</span>
+        <span class="allergen-tag">Soy</span>
+        <span class="allergen-tag">Sesame</span>
+        <span class="allergen-tag" style="border-color:var(--accent);color:var(--accent);">Plant-Based</span>
+        <span class="allergen-tag" style="border-color:var(--accent);color:var(--accent);">Vegetarian</span>
       </div>
-      <div class="sl-logo-swan">🦢</div>
     </div>
 
-    <!-- Bowl hero image -->
-    <div class="sl-bowl-wrap">
-      <img class="sl-bowl" src="images/tonkotsu-bowl.png" alt="Vegetable Tonkotsu Ramen">
+    <!-- COOKING INSTRUCTIONS -->
+    <div>
+      <span class="sec-label">Cooking Instructions</span>
+      <p class="cooking-text">
+        <strong>MICROWAVE (cook from frozen):</strong> Remove product from packaging and place in a microwave safe dish. Cover with a lid and heat on high (1000W) for 6–7 minutes.
+      </p>
+      <p class="cooking-note">Product to be cooked through before consumption.</p>
     </div>
 
-    <!-- Box shot -->
-    <div class="sl-box-wrap">
-      <img class="sl-box" src="images/tonkotsu-box.png" alt="Packaging">
+  </div>
+
+  <!-- RIGHT COLUMN -->
+  <div class="lower-right">
+
+    <!-- NUTRITION INFORMATION -->
+    <div>
+      <span class="sec-label">Nutrition Information</span>
+      <p style="font-size:0.68rem;color:var(--mid);margin-top:0.4rem;margin-bottom:0.1rem;letter-spacing:0.04em;">Servings per pack: 20 · Serving Size: 308g</p>
+      <table class="nutri">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Per Serving</th>
+            <th>Per 100g</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Energy</td><td>1950kJ</td><td>631kJ</td></tr>
+          <tr><td>Protein</td><td>19.2g</td><td>6.2g</td></tr>
+          <tr><td>Fat, total</td><td>11.0g</td><td>3.6g</td></tr>
+          <tr class="sub"><td>&nbsp;- saturated</td><td>1.5g</td><td>0.5g</td></tr>
+          <tr><td>Carbohydrate</td><td>67.7g</td><td>22.0g</td></tr>
+          <tr class="sub"><td>&nbsp;- sugars</td><td>5.0g</td><td>1.6g</td></tr>
+          <tr><td>Sodium</td><td>1570mg</td><td>509mg</td></tr>
+        </tbody>
+      </table>
     </div>
 
-    <!-- Barcode block -->
-    <div class="sl-barcode">
-      <div class="sl-bc-label">BARCODE</div>
-      <div class="sl-bc-num">9 414118 309336</div>
-      <div class="sl-bc-bars" id="bcbars"></div>
-    </div>
-
-    <!-- Bottom info -->
-    <div class="sl-footer-info">
-      <div class="sl-fi-line">Proudly brought to you by</div>
-      <div class="sl-fi-company">United Fisheries Ltd</div>
-      <div class="sl-fi-address">50–58 Parkhouse Road, Wigram,<br>Christchurch, New Zealand</div>
-      <div class="sl-fi-web">www.unitedfoodco.nz</div>
-    </div>
-
-  </aside>
-
-  <!-- RIGHT COLUMN: spec content -->
-  <section class="spec-right">
-
-    <!-- Spec header -->
-    <div class="sr-header">
-      <div class="sr-doc-title">P &nbsp; R &nbsp; O &nbsp; D &nbsp; U &nbsp; C &nbsp; T &nbsp; &nbsp; S &nbsp; P &nbsp; E &nbsp; C &nbsp; I &nbsp; F &nbsp; I &nbsp; C &nbsp; A &nbsp; T &nbsp; I &nbsp; O &nbsp; N</div>
-      <div class="sr-header-rule"></div>
-      <div class="sr-product-name">
-        <span class="sr-name-main">Vegetable</span>
-        <span class="sr-name-accent">Tonkotsu</span>
-        <span class="sr-name-main">Noodle Ramen</span>
+    <!-- PRICING CALCULATOR -->
+    <div class="calc-section">
+      <span class="calc-sec-label">Pricing Calculator</span>
+      <div class="calc-fields">
+        <div class="cf-row">
+          <label class="cf-label">Cost Price (ex-GST)</label>
+          <div class="cf-input-wrap"><span class="cf-pre">$</span><input type="number" id="cost" placeholder="0.00" min="0" step="0.01"></div>
+        </div>
+        <div class="cf-row">
+          <label class="cf-label">Freight &amp; Landing</label>
+          <div class="cf-input-wrap"><span class="cf-pre">$</span><input type="number" id="freight" placeholder="0.00" min="0" step="0.01"></div>
+        </div>
+        <div class="cf-row">
+          <label class="cf-label">Target Margin</label>
+          <div class="cf-input-wrap"><input type="number" id="margin" class="bare" placeholder="35" value="35" min="0" max="99.9" step="0.5"><span class="cf-suf">%</span></div>
+        </div>
+        <div class="gst-row">
+          <span class="gst-lbl">Include GST (NZ 15%)</span>
+          <label class="toggle"><input type="checkbox" id="gst-toggle" checked><span class="toggle-track"></span></label>
+        </div>
       </div>
-      <div class="sr-size-badge">308g</div>
-      <p class="sr-tagline">Tender noodles in a rich vegetable broth, layered with umami depth and topped with vibrant vegetables for a warming, satisfying ramen experience.</p>
-    </div>
-
-    <!-- ID grid — exact replica of spec sheet ITEM NUMBER / SHORT CODE boxes -->
-    <div class="sr-id-grid">
-      <div class="sr-id-cell">
-        <div class="sr-id-label">ITEM NUMBER</div>
-        <div class="sr-id-value">ORNSPVE20</div>
-      </div>
-      <div class="sr-id-cell">
-        <div class="sr-id-label">SHORT CODE</div>
-        <div class="sr-id-value">9270</div>
+      <button class="calc-go" id="calc-btn">Calculate Sell Price</button>
+      <div id="calc-results" style="margin-top:0.8rem;">
+        <div class="calc-result-placeholder">Enter cost price and click Calculate</div>
       </div>
     </div>
 
-    <!-- Spec sections — two-column grid like the spec sheet body -->
-    <div class="sr-body">
+  </div>
+</div>
 
-      <!-- LEFT SPEC COLUMN -->
-      <div class="sr-col">
-
-        <div class="spec-block">
-          <div class="spec-block-head">INGREDIENTS</div>
-          <p class="spec-block-text">
-            <strong>Soy Milk</strong> [water, soybean], <strong>Ramen Noodles (26%)</strong> [<u>wheat</u> flour, water, raising agent (500), colour (160a)], <strong>Vegetables (18%)</strong> [spinach, cabbage, shiitake mushroom, carrot, ear mushroom, spring onion], Konbu [water, kelp], <strong>Soy Sauce</strong> [soybean, <u>wheat</u>, salt, alcohol, water], Refined <u>Soybean</u> Oil, <u>Sesame</u> Butter, Garlic, Salt, Ginger, Sugar, Yeast Extract.
-          </p>
-          <div class="allergen-box">Contains <strong>Wheat, Gluten, Soy, Sesame.</strong></div>
-        </div>
-
-        <div class="spec-block">
-          <div class="spec-block-head">COOKING INSTRUCTIONS</div>
-          <div class="cooking-method">Cook from frozen</div>
-          <div class="cooking-mode-label">MICROWAVE</div>
-          <p class="spec-block-text">Remove product from packaging and place in a microwave safe dish. Cover with a lid and heat on high (1000W) for 6–7 minutes.</p>
-          <p class="cooking-note"><em>Product to be cooked through before consumption.</em></p>
-        </div>
-
-        <div class="spec-block">
-          <div class="spec-block-head">ORIGIN</div>
-          <p class="spec-block-text">Product of Vietnam.</p>
-        </div>
-
-        <div class="spec-block">
-          <div class="spec-block-head">SHELF LIFE</div>
-          <p class="spec-block-text">24 months.</p>
-        </div>
-
-        <div class="spec-block">
-          <div class="spec-block-head">STORAGE</div>
-          <p class="spec-block-text">Keep Frozen. Store at or below −18°C.<br>Do not refreeze once thawed.</p>
-        </div>
-
-      </div>
-
-      <!-- RIGHT SPEC COLUMN -->
-      <div class="sr-col">
-
-        <div class="spec-block">
-          <div class="spec-block-head">NUTRITION INFORMATION</div>
-          <p class="nutri-sub">Servings per pack: 20 &nbsp;·&nbsp; Serving Size: 308g</p>
-          <table class="nutri">
-            <thead>
-              <tr>
-                <th></th>
-                <th>Average Quantity<br>per Serving</th>
-                <th>Average Quantity<br>per 100g</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>Energy</td><td>1950kJ</td><td>631kJ</td></tr>
-              <tr><td>Protein</td><td>19.2g</td><td>6.2g</td></tr>
-              <tr><td>Fat, total</td><td>11.0g</td><td>3.6g</td></tr>
-              <tr class="sub"><td>&nbsp;- saturated</td><td>1.5g</td><td>0.5g</td></tr>
-              <tr><td>Carbohydrate</td><td>67.7g</td><td>22.0g</td></tr>
-              <tr class="sub"><td>&nbsp;- sugars</td><td>5.0g</td><td>1.6g</td></tr>
-              <tr><td>Sodium</td><td>1570mg</td><td>509mg</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <!-- SIZE / OUTER / PALLET table — from bottom of spec sheet -->
-        <div class="spec-block">
-          <div class="spec-block-head">SIZE &nbsp;/&nbsp; OUTER &nbsp;/&nbsp; PALLET</div>
-          <table class="sop-table">
-            <thead><tr><th>SIZE</th><th>OUTER</th><th>PALLET</th></tr></thead>
-            <tbody><tr><td>308g</td><td>20×308g NET</td><td>48 ctns (12×4)</td></tr></tbody>
-          </table>
-        </div>
-
-        <!-- Pricing calculator -->
-        <div class="spec-block calc-block">
-          <div class="spec-block-head" style="color:white;border-color:var(--accent);">DISTRIBUTOR PRICING CALCULATOR</div>
-          <div class="calc-inner">
-            <div class="calc-fields">
-              <div class="cf">
-                <label class="cl">Cost Price (ex-GST)</label>
-                <div class="ci-wrap"><span class="ci-pre">$</span><input type="number" id="cost" placeholder="0.00" min="0" step="0.01"></div>
-              </div>
-              <div class="cf">
-                <label class="cl">Freight & Landing</label>
-                <div class="ci-wrap"><span class="ci-pre">$</span><input type="number" id="freight" placeholder="0.00" min="0" step="0.01"></div>
-              </div>
-              <div class="cf">
-                <label class="cl">Target Margin</label>
-                <div class="ci-wrap"><input type="number" id="margin" class="no-pre" placeholder="35" value="35" min="0" max="99.9" step="0.5"><span class="ci-suf">%</span></div>
-              </div>
-              <div class="cf gst-cf">
-                <label class="cl">GST (NZ 15%)</label>
-                <label class="toggle"><input type="checkbox" id="gst-toggle" checked><span class="toggle-track"></span></label>
-              </div>
-              <button class="calc-btn" id="calc-btn">CALCULATE</button>
-            </div>
-            <div class="calc-results" id="calc-results">
-              <div class="cr-placeholder">Enter cost price and click Calculate</div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div><!-- /sr-body -->
-
-    <!-- Version footer -->
-    <div class="sr-version">14 October 2025 – Version 1.0</div>
-
-  </section>
-</main>
+<!-- FOOTER — matches "LITTLE FISH CO · RECIPE COSTING / Printed 6 March 2026" -->
+<footer class="page-footer">
+  <span class="pf-left">United Food Co <span>·</span> Product Specification</span>
+  <span class="pf-right">United Fisheries Ltd · Christchurch, New Zealand · unitedfoodco.nz</span>
+</footer>
 
 <script>
-// Barcode visual
-(function(){
-  const el = document.getElementById('bcbars');
-  if(!el) return;
-  [3,1,2,1,1,2,1,3,2,1,1,2,1,2,1,1,3,2,1,1,2,1,2,1,3,1,1,2,1,2,3,1,1,2,1,3,2,1,1,2,1].forEach((w,i)=>{
-    const s=document.createElement('span');
-    s.style.cssText=`display:inline-block;width:${w*2.2}px;height:100%;background:${i%2===0?'#111':'transparent'}`;
-    el.appendChild(s);
-  });
-})();
-
-// Calculator
 document.getElementById('calc-btn').addEventListener('click', function(){
   const cost = parseFloat(document.getElementById('cost').value)||0;
   const freight = parseFloat(document.getElementById('freight').value)||0;
   const margin = Math.min(parseFloat(document.getElementById('margin').value)||0, 99.9);
   const gst = document.getElementById('gst-toggle').checked;
   const res = document.getElementById('calc-results');
-
-  if(cost<=0){ res.innerHTML='<div class="cr-placeholder">Enter a cost price above zero</div>'; return; }
-
+  if(cost<=0){ res.innerHTML='<div class="calc-result-placeholder">Enter a cost price above zero</div>'; return; }
   const landed = cost + freight;
   const sellEx = landed / (1 - margin/100);
   const mAmt = sellEx - landed;
   const gstAmt = gst ? sellEx * 0.15 : 0;
   const total = sellEx + gstAmt;
-  const fmt = n => '$' + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,',');
-
+  const fmt = n => '$' + n.toFixed(2);
   res.innerHTML = `
-    <div class="cr-row"><span>Cost Price</span><span>${fmt(cost)}</span></div>
-    <div class="cr-row"><span>Freight & Landing</span><span>${fmt(freight)}</span></div>
-    <div class="cr-row cr-sep"><span>Total Landed Cost</span><span>${fmt(landed)}</span></div>
-    <div class="cr-row"><span>Margin Amount (${margin.toFixed(1)}%)</span><span>${fmt(mAmt)}</span></div>
-    <div class="cr-row"><span>Sell Price (ex-GST)</span><span>${fmt(sellEx)}</span></div>
+    <div class="cr-row"><span>Cost price</span><span>${fmt(cost)}</span></div>
+    <div class="cr-row cr-sep"><span>Freight &amp; landing</span><span>${fmt(freight)}</span></div>
+    <div class="cr-row"><span>Landed cost</span><span>${fmt(landed)}</span></div>
+    <div class="cr-row cr-sep"><span>Margin (${margin.toFixed(1)}%)</span><span>${fmt(mAmt)}</span></div>
+    <div class="cr-row"><span>Sell price (ex-GST)</span><span>${fmt(sellEx)}</span></div>
     ${gst?`<div class="cr-row cr-sep"><span>GST (15%)</span><span>${fmt(gstAmt)}</span></div>`:''}
-    <div class="cr-total"><span>TOTAL SELL PRICE</span><span>${fmt(total)}</span></div>
+    <div class="cr-total"><span>Total sell price</span><span>${fmt(total)}</span></div>
   `;
 });
 ['cost','freight','margin'].forEach(id=>{
-  document.getElementById(id).addEventListener('keydown',e=>{ if(e.key==='Enter') document.getElementById('calc-btn').click(); });
+  document.getElementById(id).addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('calc-btn').click();});
 });
 </script>
 </body>

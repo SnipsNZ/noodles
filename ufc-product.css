@@ -1,415 +1,333 @@
-/* ufc-product.css — Spec Sheet, Wide / TV Format */
+/* ufc-product.css — Little Fish Co editorial style, adapted for UFC spec sheets */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --ink:     #111111;
-  --rule:    #bbbbbb;
-  --pale:    #f5f4f1;
-  --mid:     #666666;
-  --white:   #ffffff;
-  --accent:  #111111; /* overridden per page */
-  --accent-pale: #f9f9f9;
+  --ink:      #111111;
+  --rule:     #cccccc;
+  --pale:     #f5f4f1;
+  --mid:      #777777;
+  --light:    #999999;
+  --white:    #ffffff;
+  --accent:   #111; /* overridden per page */
 }
 
-html, body { height: 100%; }
+html { font-size: 16px; }
 body {
   font-family: 'Barlow', sans-serif;
-  background: #d8d5d0;
+  background: var(--white);
   color: var(--ink);
   min-height: 100vh;
 }
 
-/* ── TOP NAV BAR ── */
-.topbar {
-  height: 52px;
-  background: var(--ink);
-  display: flex; align-items: center;
-  padding: 0 2rem;
-  gap: 2rem;
-  position: sticky; top: 0; z-index: 100;
-  border-bottom: 3px solid var(--accent);
-}
-.tb-brand {
-  display: flex; align-items: center; gap: 0.9rem;
-  text-decoration: none;
-}
-.tb-brand-text { display: flex; flex-direction: column; }
-.tb-name {
-  font-family: 'Montserrat', sans-serif; font-weight: 900;
-  font-size: 0.95rem; letter-spacing: 0.05em; text-transform: uppercase; color: white;
-}
-.tb-sub {
-  font-size: 0.55rem; letter-spacing: 0.18em; text-transform: uppercase;
-  color: rgba(255,255,255,0.35);
-}
-.tb-back {
-  margin-left: auto;
-  font-family: 'Montserrat', sans-serif; font-weight: 700;
-  font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
-  color: rgba(255,255,255,0.45); text-decoration: none;
-  padding: 0.4rem 1.2rem;
-  border: 1px solid rgba(255,255,255,0.15);
-  transition: color 0.2s, border-color 0.2s;
-}
-.tb-back:hover { color: white; border-color: rgba(255,255,255,0.4); }
-
-/* ── OUTER WRAPPER ── */
-.spec-wrap {
+/* ══════════════════════════════════════
+   PAGE HEADER  — mirrors recipe card top
+   ══════════════════════════════════════ */
+.page-header {
+  padding: 1.4rem 2.4rem 0.9rem;
   display: grid;
-  grid-template-columns: 260px 1fr;
-  min-height: calc(100vh - 52px);
-  max-width: 1600px;
-  margin: 0 auto;
-  background: var(--white);
-  box-shadow: 0 0 60px rgba(0,0,0,0.25);
+  grid-template-columns: auto 1fr auto;
+  align-items: start;
+  gap: 1.2rem;
 }
 
-/* ════════════════════════════════
-   LEFT SIDEBAR  (mirrors spec sheet left col)
-   ════════════════════════════════ */
-.spec-left {
-  background: var(--pale);
-  border-right: 1.5px solid var(--rule);
-  display: flex; flex-direction: column;
-  padding: 0;
-  overflow: hidden;
+.ph-logo {
+  display: flex; align-items: center; gap: 0.7rem;
 }
-
-/* UFC Logo — stacked like on the box / spec sheet */
-.sl-logo {
-  padding: 1.8rem 1.6rem 1.4rem;
-  border-bottom: 1px solid var(--rule);
-  display: flex; align-items: flex-start; justify-content: space-between;
-}
-.sl-logo-mark {
-  display: flex; flex-direction: column; line-height: 0.85;
-}
-.lm-united, .lm-food, .lm-co {
-  font-family: 'Montserrat', sans-serif; font-weight: 900;
-  font-size: 1.65rem; letter-spacing: -0.02em; text-transform: uppercase;
-  color: var(--ink);
-}
-.lm-dot { color: var(--accent); }
-.sl-logo-swan { font-size: 1.8rem; align-self: flex-end; }
-
-/* Bowl image — large, centered */
-.sl-bowl-wrap {
-  flex: 1;
+.ph-logo-mark {
+  width: 46px; height: 46px;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  padding: 1.5rem 1.2rem;
-  background: white;
-  border-bottom: 1px solid var(--rule);
+  font-size: 1.2rem;
+  flex-shrink: 0;
 }
-.sl-bowl {
-  width: 100%;
-  max-width: 220px;
-  filter: drop-shadow(0 8px 20px rgba(0,0,0,0.18));
-}
-
-/* Box packaging shot */
-.sl-box-wrap {
-  padding: 1.2rem 1.4rem 1rem;
-  border-bottom: 1px solid var(--rule);
-  background: var(--pale);
-  display: flex; align-items: center; justify-content: center;
-}
-.sl-box {
-  width: 100%; max-width: 200px;
-  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.12));
-}
-
-/* Barcode */
-.sl-barcode {
-  padding: 1rem 1.6rem 1rem;
-  border-bottom: 1px solid var(--rule);
-}
-.sl-bc-label {
-  font-family: 'Montserrat', sans-serif; font-weight: 700;
-  font-size: 0.52rem; letter-spacing: 0.3em; text-transform: uppercase;
-  color: var(--mid); margin-bottom: 0.3rem;
-}
-.sl-bc-num {
-  font-family: 'Courier New', monospace; font-size: 0.82rem;
-  font-weight: 700; letter-spacing: 0.08em; color: var(--ink);
-  margin-bottom: 0.5rem;
-}
-.sl-bc-bars {
-  height: 44px; display: flex; align-items: stretch; overflow: hidden;
-}
-
-/* Bottom contact info */
-.sl-footer-info {
-  padding: 1rem 1.6rem 1.4rem;
-  margin-top: auto;
-}
-.sl-fi-line {
-  font-size: 0.6rem; color: var(--mid); margin-bottom: 0.2rem;
-  font-style: italic;
-}
-.sl-fi-company {
-  font-family: 'Montserrat', sans-serif; font-weight: 700;
-  font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em;
-  color: var(--ink); margin-bottom: 0.2rem;
-}
-.sl-fi-address { font-size: 0.72rem; color: var(--mid); line-height: 1.5; margin-bottom: 0.3rem; }
-.sl-fi-web { font-size: 0.72rem; color: var(--accent); font-weight: 600; }
-
-/* ════════════════════════════════
-   RIGHT CONTENT  (mirrors spec sheet right col)
-   ════════════════════════════════ */
-.spec-right {
-  padding: 2rem 2.8rem 2rem 2.8rem;
+.ph-logo-text {
   display: flex; flex-direction: column;
-  overflow-y: auto;
 }
-
-/* "P R O D U C T   S P E C I F I C A T I O N" header */
-.sr-header { margin-bottom: 1.4rem; }
-
-.sr-doc-title {
-  font-family: 'Montserrat', sans-serif; font-weight: 700;
-  font-size: 0.62rem; letter-spacing: 0.22em;
-  color: var(--mid); margin-bottom: 0.5rem;
-  text-transform: uppercase;
-}
-.sr-header-rule {
-  height: 2px; background: var(--ink); margin-bottom: 1.2rem;
-}
-
-.sr-product-name {
-  display: flex; flex-direction: column; line-height: 0.88;
-  margin-bottom: 0.6rem;
-}
-.sr-name-main {
+.ph-logo-name {
   font-family: 'Montserrat', sans-serif; font-weight: 900;
-  font-size: clamp(2.4rem, 3.8vw, 4rem);
-  text-transform: uppercase; letter-spacing: -0.025em; color: var(--ink);
+  font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--ink); line-height: 1.1;
 }
-.sr-name-accent {
-  font-family: 'Montserrat', sans-serif; font-weight: 900;
-  font-size: clamp(2.4rem, 3.8vw, 4rem);
-  text-transform: uppercase; letter-spacing: -0.025em; color: var(--accent);
-}
-
-.sr-size-badge {
-  display: inline-block;
-  font-family: 'Montserrat', sans-serif; font-weight: 900;
-  font-size: 0.78rem; letter-spacing: 0.12em;
-  text-transform: uppercase; color: white;
-  background: var(--ink);
-  padding: 0.22rem 0.8rem;
-  margin-bottom: 0.8rem;
+.ph-logo-sub {
+  font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--mid); margin-top: 0.15rem;
 }
 
-.sr-tagline {
-  font-size: 0.88rem; line-height: 1.65; font-style: italic;
-  color: var(--mid); max-width: 600px;
-  margin-bottom: 1.2rem;
-}
-
-/* ITEM NUMBER / SHORT CODE grid — exactly like the spec sheet boxes */
-.sr-id-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  border: 1.5px solid var(--ink);
-  width: fit-content;
-  min-width: 340px;
-  margin-bottom: 1.6rem;
-}
-.sr-id-cell {
-  padding: 0.6rem 1.4rem;
-  border-right: 1px solid var(--rule);
-}
-.sr-id-cell:last-child { border-right: none; }
-.sr-id-label {
-  font-family: 'Montserrat', sans-serif; font-weight: 700;
-  font-size: 0.55rem; letter-spacing: 0.26em; text-transform: uppercase;
+.ph-title-block { }
+.ph-eyebrow {
+  font-size: 0.58rem; letter-spacing: 0.32em; text-transform: uppercase;
   color: var(--mid); margin-bottom: 0.2rem;
 }
-.sr-id-value {
+.ph-product-name {
   font-family: 'Montserrat', sans-serif; font-weight: 900;
-  font-size: 1.1rem; letter-spacing: 0.02em; color: var(--ink);
-  text-transform: uppercase;
+  font-size: clamp(2rem, 4.5vw, 3.8rem);
+  line-height: 0.88; letter-spacing: -0.025em;
+  text-transform: uppercase; color: var(--ink);
 }
+.ph-product-name .accent { color: var(--accent); }
+.ph-meta {
+  margin-top: 0.5rem;
+  font-size: 0.72rem; color: var(--mid); letter-spacing: 0.08em;
+  display: flex; align-items: center; gap: 1rem;
+}
+.ph-meta-sep { color: var(--rule); }
+.ph-meta-accent { color: var(--accent); font-weight: 600; }
 
-/* ── BODY: two columns ── */
-.sr-body {
+.ph-back {
+  font-family: 'Montserrat', sans-serif; font-weight: 700;
+  font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--mid); text-decoration: none;
+  border: 1px solid var(--rule); padding: 0.4rem 0.9rem;
+  transition: color 0.2s, border-color 0.2s;
+}
+.ph-back:hover { color: var(--ink); border-color: var(--ink); }
+
+/* Full-width rule under header — matches recipe card */
+.header-rule { height: 1.5px; background: var(--ink); margin: 0 2.4rem; }
+
+/* ══════════════════════════════════════
+   HERO IMAGE  — large, like recipe card photo
+   ══════════════════════════════════════ */
+.hero-section {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0 2.5rem;
-  flex: 1;
+  grid-template-columns: 1fr 300px;
+  gap: 0;
+  padding: 0 2.4rem;
+  margin: 0;
+  align-items: stretch;
 }
-.sr-col { display: flex; flex-direction: column; gap: 0; }
 
-/* ── SPEC BLOCKS — each section like the spec sheet ── */
-.spec-block {
-  padding: 1rem 0 1rem;
-  border-bottom: 1px solid var(--rule);
+.hero-bowl-wrap {
+  background: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  padding: 2rem 2rem 1.5rem;
+  border-right: 1px solid var(--rule);
 }
-.spec-block:last-child { border-bottom: none; }
+.hero-bowl {
+  width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  /* PNG transparency blends with white bg — no box shadow, just drop shadow */
+  filter: drop-shadow(0 16px 40px rgba(0,0,0,0.14)) drop-shadow(0 4px 12px rgba(0,0,0,0.08));
+}
 
-.spec-block-head {
+/* Right-side quick facts panel */
+.hero-facts {
+  padding: 1.8rem 1.6rem;
+  display: flex; flex-direction: column; gap: 0;
+  border-left: 1px solid var(--rule);
+}
+.hf-heading {
   font-family: 'Montserrat', sans-serif; font-weight: 900;
   font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase;
-  color: var(--ink);
-  padding-bottom: 0.45rem;
+  color: var(--ink); padding-bottom: 0.5rem;
   border-bottom: 1.5px solid var(--ink);
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.8rem;
+}
+.hf-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 0.55rem 0; border-bottom: 1px solid var(--rule);
+  font-size: 0.78rem;
+}
+.hf-row:last-child { border-bottom: none; }
+.hf-label { color: var(--mid); letter-spacing: 0.04em; }
+.hf-value { font-weight: 600; color: var(--ink); text-align: right; font-family: 'Montserrat', sans-serif; font-size: 0.78rem; }
+.hf-value.accent { color: var(--accent); font-size: 1.1rem; font-weight: 900; }
+
+.hero-box-wrap {
+  margin-top: auto; padding-top: 1.4rem;
+  border-top: 1px solid var(--rule);
+}
+.hero-box {
+  width: 100%;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
 }
 
-.spec-block-text {
-  font-size: 0.82rem; line-height: 1.72; color: #333;
-}
-.spec-block-text u { text-decoration: none; font-weight: 600; color: var(--ink); }
-.spec-block-text strong { font-weight: 600; }
-
-/* Allergen warning */
-.allergen-box {
-  margin-top: 0.7rem;
-  background: #FFFBF0;
-  border-left: 3px solid var(--accent);
-  padding: 0.55rem 0.9rem;
-  font-size: 0.78rem; color: #6B4A00; line-height: 1.5;
+/* ══════════════════════════════════════
+   LOWER SECTION — ingredients / spec / nutrition
+   Like recipe card's bottom two-column layout
+   ══════════════════════════════════════ */
+.lower-rule { height: 1px; background: var(--rule); margin: 0 2.4rem; }
+.lower-section {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 0;
+  padding: 0 2.4rem;
 }
 
-/* Cooking */
-.cooking-method {
-  font-size: 0.8rem; font-style: italic; color: var(--mid);
-  margin-bottom: 0.3rem;
+/* LEFT: ingredients + cooking + allergens */
+.lower-left {
+  padding: 1.6rem 2rem 1.6rem 0;
+  border-right: 1px solid var(--rule);
+  display: flex; flex-direction: column; gap: 1.5rem;
 }
-.cooking-mode-label {
+
+/* RIGHT: cost summary style panel */
+.lower-right {
+  padding: 1.6rem 0 1.6rem 2rem;
+  display: flex; flex-direction: column; gap: 1.5rem;
+}
+
+/* Section labels — exactly like recipe card "INGREDIENTS", "COST SUMMARY" */
+.sec-label {
+  font-family: 'Montserrat', sans-serif; font-weight: 900;
+  font-size: 0.58rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--ink); display: block;
+  padding-bottom: 0.4rem; margin-bottom: 0;
+  border-bottom: 1.5px solid var(--ink);
+}
+
+/* Table header row — "INGREDIENT · QUANTITY · COST" */
+.spec-table {
+  width: 100%; border-collapse: collapse; font-size: 0.8rem;
+  margin-top: 0.6rem;
+}
+.spec-table thead th {
   font-family: 'Montserrat', sans-serif; font-weight: 700;
-  font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase;
-  color: var(--ink); margin-bottom: 0.35rem;
+  font-size: 0.52rem; letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--mid); padding: 0.4rem 0; text-align: left;
+  border-bottom: 1px solid var(--rule);
 }
-.cooking-note {
-  font-size: 0.75rem; color: var(--mid); margin-top: 0.5rem; line-height: 1.5;
+.spec-table thead th:last-child { text-align: right; }
+.spec-table tbody td {
+  padding: 0.48rem 0; border-bottom: 1px solid var(--rule);
+  color: #333; vertical-align: middle;
+}
+.spec-table tbody td:nth-child(2) { color: var(--mid); font-size: 0.75rem; text-align: right; padding-right: 1.5rem; }
+.spec-table tbody td:last-child { text-align: right; font-weight: 600; color: var(--ink); }
+.spec-table tbody tr:last-child td { border-bottom: none; }
+
+/* Ingredients prose */
+.ingredients-text {
+  font-size: 0.8rem; line-height: 1.7; color: #333; margin-top: 0.6rem;
+}
+.ingredients-text u { text-decoration: none; font-weight: 600; }
+
+/* Allergen tags — plain bordered boxes like recipe card */
+.allergen-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.6rem; }
+.allergen-tag {
+  font-family: 'Montserrat', sans-serif; font-weight: 700;
+  font-size: 0.56rem; letter-spacing: 0.16em; text-transform: uppercase;
+  border: 1px solid var(--ink); padding: 0.22rem 0.6rem;
+  color: var(--ink);
 }
 
-/* ── NUTRITION TABLE — matches spec sheet exactly ── */
-.nutri-sub {
-  font-size: 0.72rem; color: var(--mid); margin-bottom: 0.7rem;
-  font-weight: 500; letter-spacing: 0.04em;
+/* Cooking notes */
+.cooking-text { font-size: 0.8rem; line-height: 1.72; color: #333; margin-top: 0.6rem; }
+.cooking-note { font-size: 0.74rem; font-style: italic; color: var(--mid); margin-top: 0.4rem; }
+
+/* ── COST SUMMARY PANEL — right column, exactly like recipe card ── */
+.cost-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-size: 0.82rem; padding: 0.5rem 0;
+  border-bottom: 1px solid var(--rule);
 }
+.cost-row:last-of-type { border-bottom: none; }
+.cost-label { color: var(--mid); }
+.cost-value { font-weight: 600; color: var(--ink); }
+.cost-row.total .cost-label { font-weight: 600; color: var(--ink); font-size: 0.85rem; }
+.cost-row.total .cost-value { font-size: 1.4rem; font-family: 'Montserrat', sans-serif; font-weight: 900; color: var(--accent); }
+
+/* Nutrition table in right panel */
 table.nutri {
-  width: 100%; border-collapse: collapse;
-  border: 1px solid var(--rule);
-  font-size: 0.8rem;
+  width: 100%; border-collapse: collapse; font-size: 0.78rem;
+  margin-top: 0.6rem;
 }
-table.nutri thead tr { background: var(--pale); }
 table.nutri thead th {
   font-family: 'Montserrat', sans-serif; font-weight: 700;
-  font-size: 0.56rem; letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--mid); padding: 0.5rem 0.8rem; text-align: left;
-  border: 1px solid var(--rule); line-height: 1.4;
+  font-size: 0.5rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--mid); padding: 0.35rem 0; text-align: left;
+  border-bottom: 1px solid var(--rule);
 }
 table.nutri thead th:not(:first-child) { text-align: right; }
 table.nutri tbody td {
-  padding: 0.42rem 0.8rem;
-  border: 1px solid var(--rule);
-  color: #333;
+  padding: 0.38rem 0; border-bottom: 1px solid var(--rule);
+  color: #333; font-size: 0.78rem;
 }
 table.nutri tbody td:not(:first-child) { text-align: right; font-weight: 600; color: var(--ink); }
-table.nutri tbody tr.sub td:first-child { padding-left: 1.5rem; color: var(--mid); font-size: 0.76rem; }
+table.nutri tbody tr.sub td:first-child { padding-left: 1rem; color: var(--light); font-size: 0.72rem; }
+table.nutri tbody tr:last-child td { border-bottom: none; }
 
-/* SIZE / OUTER / PALLET */
-table.sop-table {
-  width: 100%; border-collapse: collapse; border: 1px solid var(--rule);
-  font-size: 0.82rem;
-}
-table.sop-table th {
-  font-family: 'Montserrat', sans-serif; font-weight: 700;
-  font-size: 0.52rem; letter-spacing: 0.22em; text-transform: uppercase;
-  color: var(--mid); padding: 0.45rem 0.8rem; text-align: left;
-  background: var(--pale); border: 1px solid var(--rule);
-}
-table.sop-table td {
-  padding: 0.55rem 0.8rem; font-weight: 600;
-  border: 1px solid var(--rule); color: var(--ink);
-}
-
-/* ── PRICING CALCULATOR BLOCK ── */
-.calc-block {
+/* ── PRICING CALCULATOR ── */
+.calc-section {
   background: var(--ink);
-  padding: 1.2rem 1.4rem;
-  border-bottom: none !important;
-  margin-top: 0.5rem;
+  padding: 1.4rem 1.5rem;
 }
-.calc-block .spec-block-head { color: white; border-color: var(--accent); }
-.calc-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.5rem; align-items: start; }
-.calc-fields { display: flex; flex-direction: column; gap: 0.7rem; }
-.cf { display: flex; flex-direction: column; gap: 0.25rem; }
-.cl {
+.calc-sec-label {
+  font-family: 'Montserrat', sans-serif; font-weight: 900;
+  font-size: 0.58rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--accent); padding-bottom: 0.4rem;
+  border-bottom: 1.5px solid var(--accent);
+  margin-bottom: 1rem; display: block;
+}
+.calc-fields { display: flex; flex-direction: column; gap: 0.7rem; margin-bottom: 0.8rem; }
+.cf-row { display: flex; flex-direction: column; gap: 0.2rem; }
+.cf-label {
   font-family: 'Montserrat', sans-serif; font-weight: 700;
-  font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase;
-  color: rgba(255,255,255,0.38);
+  font-size: 0.52rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
 }
-.ci-wrap { position: relative; }
-.ci-pre { position: absolute; left: 0.7rem; top: 50%; transform: translateY(-50%); color: rgba(255,255,255,0.3); font-size: 0.9rem; pointer-events: none; }
-.ci-suf { position: absolute; right: 0.7rem; top: 50%; transform: translateY(-50%); color: rgba(255,255,255,0.25); font-size: 0.7rem; pointer-events: none; }
+.cf-input-wrap { position: relative; }
+.cf-pre { position: absolute; left: 0.65rem; top: 50%; transform: translateY(-50%); color: rgba(255,255,255,0.3); font-size: 0.9rem; pointer-events: none; }
+.cf-suf { position: absolute; right: 0.65rem; top: 50%; transform: translateY(-50%); color: rgba(255,255,255,0.22); font-size: 0.68rem; pointer-events: none; }
 input[type="number"] {
-  width: 100%; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
-  color: white; padding: 0.6rem 0.7rem 0.6rem 1.9rem;
-  font-family: 'Barlow', sans-serif; font-size: 0.9rem; outline: none;
+  width: 100%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+  color: white; padding: 0.55rem 0.65rem 0.55rem 1.8rem;
+  font-family: 'Barlow', sans-serif; font-size: 0.88rem; outline: none;
   transition: border-color 0.2s; -moz-appearance: textfield;
 }
 input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { -webkit-appearance: none; }
 input:focus { border-color: var(--accent); }
-input.no-pre { padding-left: 0.7rem; }
-
-.gst-cf { flex-direction: row; align-items: center; justify-content: space-between; margin-top: 0.1rem; }
-.toggle { position: relative; width: 40px; height: 21px; cursor: pointer; display: inline-block; flex-shrink: 0; }
+input.bare { padding-left: 0.65rem; }
+.gst-row { display: flex; justify-content: space-between; align-items: center; }
+.gst-lbl { font-size: 0.75rem; color: rgba(255,255,255,0.5); }
+.toggle { position: relative; width: 38px; height: 20px; cursor: pointer; display: inline-block; }
 .toggle input { opacity: 0; width: 0; height: 0; }
-.toggle-track { position: absolute; inset: 0; background: rgba(255,255,255,0.1); border-radius: 21px; transition: background 0.25s; }
-.toggle-track::before { content: ''; position: absolute; width: 15px; height: 15px; left: 3px; top: 3px; background: rgba(255,255,255,0.35); border-radius: 50%; transition: transform 0.25s, background 0.25s; }
+.toggle-track { position: absolute; inset: 0; background: rgba(255,255,255,0.1); border-radius: 20px; transition: background 0.25s; }
+.toggle-track::before { content: ''; position: absolute; width: 14px; height: 14px; left: 3px; top: 3px; background: rgba(255,255,255,0.35); border-radius: 50%; transition: transform 0.25s, background 0.25s; }
 .toggle input:checked + .toggle-track { background: var(--accent); }
-.toggle input:checked + .toggle-track::before { transform: translateX(19px); background: white; }
-
-.calc-btn {
-  width: 100%; padding: 0.65rem;
-  background: var(--accent); border: none; cursor: pointer;
-  font-family: 'Montserrat', sans-serif; font-size: 0.7rem; font-weight: 900;
+.toggle input:checked + .toggle-track::before { transform: translateX(18px); background: white; }
+.calc-go {
+  width: 100%; padding: 0.6rem; background: var(--accent); border: none; cursor: pointer;
+  font-family: 'Montserrat', sans-serif; font-size: 0.65rem; font-weight: 900;
   letter-spacing: 0.28em; text-transform: uppercase; color: var(--ink);
-  transition: opacity 0.2s;
+  transition: opacity 0.2s; margin-top: 0.3rem;
 }
-.calc-btn:hover { opacity: 0.85; }
+.calc-go:hover { opacity: 0.85; }
+.calc-result-placeholder { font-size: 0.72rem; color: rgba(255,255,255,0.2); text-align: center; padding: 1rem 0; }
+.cr-row { display: flex; justify-content: space-between; padding: 0.36rem 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 0.75rem; color: rgba(255,255,255,0.5); }
+.cr-row span:last-child { font-weight: 600; color: rgba(255,255,255,0.9); }
+.cr-sep { border-bottom-color: rgba(255,255,255,0.15); padding-bottom: 0.5rem; }
+.cr-total { display: flex; justify-content: space-between; align-items: baseline; padding: 0.6rem 0 0.2rem; border-top: 2px solid var(--accent); margin-top: 0.3rem; }
+.cr-total span:first-child { font-family: 'Montserrat', sans-serif; font-size: 0.52rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+.cr-total span:last-child { font-family: 'Montserrat', sans-serif; font-size: 1.3rem; font-weight: 900; color: var(--accent); }
 
-/* Results */
-.calc-results { display: flex; flex-direction: column; gap: 0; }
-.cr-placeholder { font-size: 0.75rem; color: rgba(255,255,255,0.2); text-align: center; padding: 1.5rem 0.5rem; line-height: 1.6; }
-.cr-row {
-  display: flex; justify-content: space-between; align-items: baseline;
-  padding: 0.38rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);
-  font-size: 0.78rem; color: rgba(255,255,255,0.55);
-}
-.cr-row span:last-child { font-weight: 600; color: white; }
-.cr-sep { border-bottom-color: rgba(255,255,255,0.15); padding-bottom: 0.55rem; }
-.cr-total {
-  display: flex; justify-content: space-between; align-items: baseline;
-  padding: 0.7rem 0 0.2rem; margin-top: 0.3rem;
-  border-top: 2px solid var(--accent);
-  font-family: 'Montserrat', sans-serif;
-}
-.cr-total span:first-child { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.45); }
-.cr-total span:last-child { font-size: 1.4rem; font-weight: 900; color: var(--accent); }
-
-/* Version line */
-.sr-version {
-  font-size: 0.62rem; color: var(--mid); letter-spacing: 0.1em;
-  text-align: right; padding-top: 1rem; margin-top: auto;
+/* ══════════════════════════════════════
+   PAGE FOOTER — "LITTLE FISH CO" style
+   ══════════════════════════════════════ */
+.page-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0.9rem 2.4rem;
   border-top: 1px solid var(--rule);
+  margin-top: 0.5rem;
 }
+.pf-left { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); }
+.pf-left span { color: var(--light); margin: 0 0.5rem; }
+.pf-right { font-size: 0.6rem; letter-spacing: 0.1em; color: var(--light); }
 
-/* ── RESPONSIVE ── */
-@media (max-width: 900px) {
-  .spec-wrap { grid-template-columns: 1fr; }
-  .spec-left { flex-direction: row; flex-wrap: wrap; padding: 1.5rem; gap: 1rem; border-right: none; border-bottom: 1.5px solid var(--rule); }
-  .sl-logo { border-bottom: none; padding: 0; }
-  .sl-bowl-wrap, .sl-box-wrap { padding: 0; border: none; background: none; }
-  .sl-bowl, .sl-box { max-width: 120px; }
-  .sl-barcode, .sl-footer-info { padding: 0; border: none; }
-  .spec-right { padding: 1.5rem; }
-  .sr-body { grid-template-columns: 1fr; }
-  .calc-inner { grid-template-columns: 1fr; }
-  .sr-id-grid { min-width: unset; width: 100%; }
+/* ══════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════ */
+@media (max-width: 860px) {
+  .page-header { grid-template-columns: 1fr auto; }
+  .ph-logo { grid-column: 1 / -1; }
+  .hero-section { grid-template-columns: 1fr; }
+  .hero-facts { border-left: none; border-top: 1px solid var(--rule); }
+  .hero-bowl-wrap { border-right: none; border-bottom: 1px solid var(--rule); }
+  .lower-section { grid-template-columns: 1fr; }
+  .lower-left { border-right: none; padding-right: 0; border-bottom: 1px solid var(--rule); }
+  .lower-right { padding-left: 0; }
+  .page-header, .header-rule, .lower-rule, .lower-section, .page-footer { padding-left: 1.2rem; padding-right: 1.2rem; }
+  .hero-section { padding: 0 1.2rem; }
 }
