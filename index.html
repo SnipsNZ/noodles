@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>United Food Co — Asian Kitchen · Distributor Catalogue</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:        #111111;
+      --off-white:  #F4F1EC;
+      --warm-grey:  #E8E3DA;
+      --mid-grey:   #9A9690;
+      --light-line: #D5D0C8;
+
+      /* Per-product accent colours from packaging */
+      --tonkotsu:   #C8832A;   /* amber/gold */
+      --wonton:     #2A9B7A;   /* teal */
+      --dandan:     #C42B2B;   /* crimson red */
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: var(--off-white);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      background: var(--ink);
+      display: flex; align-items: stretch;
+      height: 64px;
+    }
+    .nav-brand {
+      display: flex; align-items: center; gap: 1rem;
+      padding: 0 2.5rem;
+      border-right: 1px solid rgba(255,255,255,0.1);
+      text-decoration: none;
+    }
+    .nav-brand-swan {
+      font-size: 1.5rem; line-height: 1;
+    }
+    .nav-brand-text {
+      display: flex; flex-direction: column; line-height: 1.1;
+    }
+    .nav-brand-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem; font-weight: 800; letter-spacing: 0.06em;
+      text-transform: uppercase; color: white;
+    }
+    .nav-brand-sub {
+      font-size: 0.62rem; font-weight: 400; letter-spacing: 0.22em;
+      text-transform: uppercase; color: rgba(255,255,255,0.4);
+    }
+    .nav-links {
+      display: flex; align-items: center; list-style: none;
+      margin-left: auto;
+    }
+    .nav-links li a {
+      display: flex; align-items: center; height: 64px;
+      padding: 0 1.4rem;
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em;
+      text-transform: uppercase; color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      border-left: 1px solid rgba(255,255,255,0.08);
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-links li a:hover { color: white; background: rgba(255,255,255,0.05); }
+    .nav-links li a.active { color: white; }
+    .nav-pill {
+      display: flex; align-items: center;
+      margin: 0 1.5rem;
+      font-size: 0.62rem; font-weight: 600; letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ink); background: var(--off-white);
+      padding: 0.4rem 1rem;
+      border-left: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding-top: 64px;
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      background: var(--ink);
+    }
+
+    /* Asian Kitchen label bar */
+    .hero-label-bar {
+      background: var(--ink);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 0.9rem 3rem;
+      display: flex; align-items: center; gap: 2rem;
+    }
+    .hero-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.3em;
+      text-transform: uppercase; color: rgba(255,255,255,0.35);
+    }
+    .hero-label-divider { width: 1px; height: 14px; background: rgba(255,255,255,0.15); }
+
+    /* Slideshow */
+    .slideshow {
+      position: relative; overflow: hidden;
+      flex: 1;
+    }
+
+    .slide {
+      position: absolute; inset: 0;
+      display: grid; grid-template-columns: 1fr 1fr;
+      opacity: 0; transition: opacity 0.8s ease;
+      pointer-events: none;
+    }
+    .slide.active { opacity: 1; pointer-events: auto; }
+
+    .slide-left {
+      position: relative;
+      display: flex; align-items: center; justify-content: center;
+      padding: 4rem 3rem 4rem 4rem;
+      overflow: hidden;
+    }
+
+    /* Subtle diagonal accent stripe */
+    .slide-left::before {
+      content: '';
+      position: absolute;
+      top: -20%; right: -5%;
+      width: 3px; height: 140%;
+      background: var(--accent-color);
+      transform: rotate(12deg);
+      opacity: 0.3;
+    }
+
+    .slide-content { position: relative; z-index: 2; }
+
+    .slide-series {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--accent-color);
+      margin-bottom: 1.4rem;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .slide-series::before {
+      content: ''; display: block;
+      width: 24px; height: 2px;
+      background: var(--accent-color);
+    }
+
+    .slide-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: clamp(3.5rem, 6vw, 5.8rem);
+      line-height: 0.92;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.8rem;
+    }
+    .slide-title span {
+      display: block;
+      color: var(--accent-color);
+    }
+
+    .slide-desc {
+      font-size: 0.88rem; line-height: 1.7; font-weight: 300;
+      color: rgba(255,255,255,0.55);
+      max-width: 380px;
+      margin-bottom: 2.5rem;
+    }
+
+    .slide-cta {
+      display: inline-flex; align-items: center; gap: 0.8rem;
+      background: var(--accent-color);
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.22em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.85rem 2rem;
+      transition: opacity 0.2s, gap 0.25s;
+    }
+    .slide-cta:hover { opacity: 0.85; gap: 1.2rem; }
+
+    .slide-sku {
+      margin-top: 2rem;
+      font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: rgba(255,255,255,0.2);
+    }
+
+    .slide-right {
+      position: relative;
+      display: flex; align-items: center; justify-content: center;
+      padding: 3rem;
+      overflow: hidden;
+    }
+
+    /* Large watermark product number */
+    .slide-watermark {
+      position: absolute;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 22rem;
+      line-height: 1;
+      color: rgba(255,255,255,0.03);
+      right: -2rem; bottom: -2rem;
+      user-select: none;
+      letter-spacing: -0.05em;
+    }
+
+    .slide-bowl-img {
+      position: relative; z-index: 2;
+      width: min(520px, 90%);
+      filter: drop-shadow(0 30px 60px rgba(0,0,0,0.6));
+      transition: transform 0.8s ease;
+    }
+    .slide.active .slide-bowl-img { animation: floatin 1s ease forwards; }
+    @keyframes floatin { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+    /* Slide dots */
+    .slide-dots {
+      position: absolute; bottom: 2.5rem; left: 4rem;
+      display: flex; gap: 0.4rem; z-index: 10;
+    }
+    .dot {
+      height: 3px; width: 24px;
+      background: rgba(255,255,255,0.2);
+      cursor: pointer; transition: width 0.4s, background 0.4s;
+    }
+    .dot.active { width: 48px; background: var(--dot-accent, white); }
+
+    /* ── INTRO STRIP ── */
+    .intro-strip {
+      background: white;
+      border-bottom: 1px solid var(--light-line);
+      padding: 1.8rem 3rem;
+      display: flex; align-items: center; gap: 0;
+      overflow: hidden;
+    }
+    .intro-strip-item {
+      display: flex; align-items: center; gap: 1.2rem;
+      padding: 0 2.5rem;
+      border-right: 1px solid var(--light-line);
+      flex: 1;
+    }
+    .intro-strip-item:first-child { padding-left: 0; }
+    .intro-strip-item:last-child { border-right: none; }
+    .strip-icon { font-size: 1.4rem; }
+    .strip-text-main { font-size: 0.88rem; font-weight: 600; color: var(--ink); }
+    .strip-text-sub { font-size: 0.72rem; color: var(--mid-grey); margin-top: 0.1rem; letter-spacing: 0.04em; }
+
+    /* ── PRODUCTS ── */
+    #products { padding: 5rem 3rem; background: var(--off-white); }
+
+    .section-head {
+      display: flex; align-items: baseline; justify-content: space-between;
+      margin-bottom: 3rem;
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: 1rem;
+    }
+    .section-head-left { display: flex; align-items: baseline; gap: 1.5rem; }
+    .section-eyebrow {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--mid-grey);
+    }
+    .section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.6rem; font-weight: 900;
+      text-transform: uppercase; letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+    .section-count {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--mid-grey);
+    }
+
+    .product-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--light-line);
+      border: 1px solid var(--light-line);
+    }
+
+    .product-card {
+      background: white;
+      text-decoration: none;
+      display: flex; flex-direction: column;
+      position: relative; overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .product-card:hover { transform: translateY(-4px); z-index: 2; box-shadow: 0 12px 40px rgba(0,0,0,0.12); }
+
+    /* Top accent bar */
+    .card-accent-bar {
+      height: 4px;
+      background: var(--card-color);
+    }
+
+    .card-image-wrap {
+      position: relative;
+      background: var(--off-white);
+      padding: 2rem;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+      min-height: 280px;
+    }
+
+    /* Box behind bowl */
+    .card-box-img {
+      position: absolute;
+      bottom: -10px; right: -10px;
+      width: 45%;
+      opacity: 0.9;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15));
+      transition: transform 0.4s ease, opacity 0.4s;
+    }
+    .product-card:hover .card-box-img { transform: translate(4px, -4px); opacity: 1; }
+
+    .card-bowl-img {
+      position: relative; z-index: 2;
+      width: 75%;
+      filter: drop-shadow(0 8px 24px rgba(0,0,0,0.18));
+      transition: transform 0.4s ease;
+    }
+    .product-card:hover .card-bowl-img { transform: scale(1.04); }
+
+    .card-body {
+      padding: 1.6rem 2rem 2rem;
+      display: flex; flex-direction: column;
+      flex: 1;
+      border-top: 1px solid var(--light-line);
+    }
+    .card-series {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.28em;
+      text-transform: uppercase; color: var(--card-color);
+      margin-bottom: 0.5rem;
+    }
+    .card-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.9rem; font-weight: 900;
+      text-transform: uppercase; letter-spacing: -0.01em;
+      line-height: 0.95; color: var(--ink);
+      margin-bottom: 0.8rem;
+    }
+    .card-desc {
+      font-size: 0.8rem; line-height: 1.65; font-weight: 300;
+      color: var(--mid-grey); margin-bottom: 1.4rem; flex: 1;
+    }
+    .card-meta {
+      display: flex; gap: 1rem;
+      border-top: 1px solid var(--light-line);
+      padding-top: 1rem;
+      align-items: center; justify-content: space-between;
+    }
+    .card-format {
+      font-size: 0.68rem; font-weight: 500; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--mid-grey);
+    }
+    .card-arrow {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--card-color);
+      display: flex; align-items: center; gap: 0.4rem;
+      transition: gap 0.2s;
+    }
+    .product-card:hover .card-arrow { gap: 0.8rem; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      padding: 2.5rem 3rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .footer-brand {
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .footer-brand-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem; font-weight: 800; letter-spacing: 0.08em;
+      text-transform: uppercase; color: white;
+    }
+    .footer-brand-sub {
+      font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+    }
+    .footer-copy {
+      font-size: 0.65rem; letter-spacing: 0.1em; color: rgba(255,255,255,0.25);
+      text-transform: uppercase;
+    }
+    .footer-copy a { color: rgba(255,255,255,0.4); text-decoration: none; }
+
+    @media (max-width: 1000px) {
+      .slide { grid-template-columns: 1fr; }
+      .slide-right { display: none; }
+      .slide-left { padding: 3rem 2rem; }
+      nav { height: auto; flex-wrap: wrap; padding: 1rem; position: sticky; }
+      .nav-links { display: none; }
+      #products { padding: 3rem 1.5rem; }
+      .product-cards { grid-template-columns: 1fr; }
+      .intro-strip { flex-direction: column; gap: 1rem; padding: 1.5rem; }
+      .intro-strip-item { border-right: none; border-bottom: 1px solid var(--light-line); padding: 1rem 0; width: 100%; }
+      footer { flex-direction: column; gap: 1rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-brand" href="index.html">
+    <span class="nav-brand-swan">🦢</span>
+    <div class="nav-brand-text">
+      <span class="nav-brand-name">United Food Co</span>
+      <span class="nav-brand-sub">Asian Kitchen · Distributor Catalogue</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#products">Our Range</a></li>
+    <li><a href="product-tonkotsu.html">Vege Tonkotsu</a></li>
+    <li><a href="product-wonton.html">Prawn Wonton</a></li>
+    <li><a href="product-dandan.html">Dan Dan</a></li>
+    <li><span class="nav-pill">Trade Only</span></li>
+  </ul>
+</nav>
+
+<!-- HERO SLIDESHOW -->
+<section class="hero">
+  <div class="hero-label-bar">
+    <span class="hero-label">Asian Kitchen</span>
+    <div class="hero-label-divider"></div>
+    <span class="hero-label">Frozen Noodle Range</span>
+    <div class="hero-label-divider"></div>
+    <span class="hero-label">20 × 308g / Bulk</span>
+    <div class="hero-label-divider"></div>
+    <span class="hero-label">Product of Vietnam</span>
+  </div>
+
+  <div class="slideshow" id="slideshow">
+
+    <!-- SLIDE 1: Vege Tonkotsu -->
+    <div class="slide active" style="--accent-color: #C8832A;">
+      <div class="slide-left">
+        <div class="slide-content">
+          <div class="slide-series">Asian Kitchen · 9270</div>
+          <h1 class="slide-title">
+            Vegetable<br>
+            <span>Tonkotsu</span><br>
+            Noodle Ramen
+          </h1>
+          <p class="slide-desc">Tender noodles in a rich vegetable broth, layered with umami depth and topped with vibrant vegetables for a warming, satisfying ramen experience.</p>
+          <a href="product-tonkotsu.html" class="slide-cta">View Specs & Pricing →</a>
+          <div class="slide-sku">SKU 9270 · ORNSPVE20 · 20×308g NET</div>
+        </div>
+      </div>
+      <div class="slide-right">
+        <div class="slide-watermark">9270</div>
+        <img class="slide-bowl-img" src="images/tonkotsu-bowl.png" alt="Vegetable Tonkotsu Ramen" />
+      </div>
+    </div>
+
+    <!-- SLIDE 2: Prawn Wonton -->
+    <div class="slide" style="--accent-color: #2A9B7A;">
+      <div class="slide-left">
+        <div class="slide-content">
+          <div class="slide-series">Asian Kitchen · 9274</div>
+          <h1 class="slide-title">
+            Prawn<br>
+            <span>Wonton</span><br>
+            Noodle Soup
+          </h1>
+          <p class="slide-desc">A comforting classic with juicy prawn wontons, springy noodles and a savoury broth. Authentic handmade quality, ready to serve.</p>
+          <a href="product-wonton.html" class="slide-cta">View Specs & Pricing →</a>
+          <div class="slide-sku">SKU 9274 · ORNSPPW20 · 20×308g NET</div>
+        </div>
+      </div>
+      <div class="slide-right">
+        <div class="slide-watermark">9274</div>
+        <img class="slide-bowl-img" src="images/wonton-bowl.png" alt="Prawn Wonton Noodle Soup" />
+      </div>
+    </div>
+
+    <!-- SLIDE 3: Dan Dan Noodles -->
+    <div class="slide" style="--accent-color: #C42B2B;">
+      <div class="slide-left">
+        <div class="slide-content">
+          <div class="slide-series">Asian Kitchen · 9281</div>
+          <h1 class="slide-title">
+            Dan Dan<br>
+            <span>Noodles</span>
+          </h1>
+          <p class="slide-desc">Savoury noodles in a rich Sichuan sauce with vegetables and mild chilli, delivering an authentic, plant-based dish ready for effortless service.</p>
+          <a href="product-dandan.html" class="slide-cta">View Specs & Pricing →</a>
+          <div class="slide-sku">SKU 9281 · ORNSPDN20 · 20×308g NET</div>
+        </div>
+      </div>
+      <div class="slide-right">
+        <div class="slide-watermark">9281</div>
+        <img class="slide-bowl-img" src="images/dandan-bowl.png" alt="Dan Dan Noodles" />
+      </div>
+    </div>
+
+    <div class="slide-dots" id="dots">
+      <div class="dot active" onclick="goTo(0)" style="--dot-accent:#C8832A;"></div>
+      <div class="dot" onclick="goTo(1)" style="--dot-accent:#2A9B7A;"></div>
+      <div class="dot" onclick="goTo(2)" style="--dot-accent:#C42B2B;"></div>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO STRIP -->
+<div class="intro-strip">
+  <div class="intro-strip-item">
+    <span class="strip-icon">🧊</span>
+    <div>
+      <div class="strip-text-main">Keep Frozen −18°C</div>
+      <div class="strip-text-sub">Cook from frozen · Do not refreeze once thawed</div>
+    </div>
+  </div>
+  <div class="intro-strip-item">
+    <span class="strip-icon">🤲</span>
+    <div>
+      <div class="strip-text-main">Authentic Handmade</div>
+      <div class="strip-text-sub">Crafted with fresh ingredients · Product of Vietnam</div>
+    </div>
+  </div>
+  <div class="intro-strip-item">
+    <span class="strip-icon">📦</span>
+    <div>
+      <div class="strip-text-main">20 × 308g Bulk Pack</div>
+      <div class="strip-text-sub">48 cartons per pallet · 24 month shelf life</div>
+    </div>
+  </div>
+  <div class="intro-strip-item">
+    <span class="strip-icon">🍃</span>
+    <div>
+      <div class="strip-text-main">Plant-Based Options</div>
+      <div class="strip-text-sub">Vege Tonkotsu & Dan Dan are plant-based</div>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCT CARDS -->
+<section id="products">
+  <div class="section-head">
+    <div class="section-head-left">
+      <span class="section-eyebrow">Asian Kitchen</span>
+      <h2 class="section-title">Our Range</h2>
+    </div>
+    <span class="section-count">3 Products</span>
+  </div>
+
+  <div class="product-cards">
+
+    <!-- Vege Tonkotsu -->
+    <a class="product-card" href="product-tonkotsu.html" style="--card-color: #C8832A;">
+      <div class="card-accent-bar"></div>
+      <div class="card-image-wrap">
+        <img class="card-box-img" src="images/tonkotsu-box.png" alt="Tonkotsu Box" />
+        <img class="card-bowl-img" src="images/tonkotsu-bowl.png" alt="Vegetable Tonkotsu Ramen" />
+      </div>
+      <div class="card-body">
+        <div class="card-series">Asian Kitchen · SKU 9270</div>
+        <div class="card-name">Vegetable<br>Tonkotsu<br>Noodle Ramen</div>
+        <p class="card-desc">Rich, creamy plant-based tonkotsu broth with tender noodles & vibrant vegetables. A warming, satisfying ramen experience.</p>
+        <div class="card-meta">
+          <span class="card-format">20 × 308g · Bulk</span>
+          <span class="card-arrow">View Details →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Prawn Wonton -->
+    <a class="product-card" href="product-wonton.html" style="--card-color: #2A9B7A;">
+      <div class="card-accent-bar"></div>
+      <div class="card-image-wrap">
+        <img class="card-box-img" src="images/wonton-box.png" alt="Wonton Box" />
+        <img class="card-bowl-img" src="images/wonton-bowl.png" alt="Prawn Wonton Noodle Soup" />
+      </div>
+      <div class="card-body">
+        <div class="card-series">Asian Kitchen · SKU 9274</div>
+        <div class="card-name">Prawn<br>Wonton<br>Noodle Soup</div>
+        <p class="card-desc">Authentic prawn wonton noodle soup with juicy wontons, springy noodles and delicate savoury broth.</p>
+        <div class="card-meta">
+          <span class="card-format">20 × 308g · Bulk</span>
+          <span class="card-arrow">View Details →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Dan Dan -->
+    <a class="product-card" href="product-dandan.html" style="--card-color: #C42B2B;">
+      <div class="card-accent-bar"></div>
+      <div class="card-image-wrap">
+        <img class="card-box-img" src="images/dandan-box.png" alt="Dan Dan Box" />
+        <img class="card-bowl-img" src="images/dandan-bowl.png" alt="Dan Dan Noodles" />
+      </div>
+      <div class="card-body">
+        <div class="card-series">Asian Kitchen · SKU 9281</div>
+        <div class="card-name">Dan Dan<br>Noodles</div>
+        <p class="card-desc">Sichuan-inspired noodles with vegetables, mild chilli heat & bold street-food flavour. Plant-based & ready to serve.</p>
+        <div class="card-meta">
+          <span class="card-format">20 × 308g · Bulk</span>
+          <span class="card-arrow">View Details →</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">
+    <span>🦢</span>
+    <div>
+      <div class="footer-brand-name">United Food Co</div>
+      <div class="footer-brand-sub">unitedfoodco.nz · United Fisheries Ltd, Christchurch NZ</div>
+    </div>
+  </div>
+  <div class="footer-copy">© 2026 United Fisheries Ltd · <a href="index.html">Catalogue Home</a> · Distributor Use Only</div>
+</footer>
+
+<script>
+  let cur = 0;
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
+  const COLORS = ['#C8832A','#2A9B7A','#C42B2B'];
+
+  function goTo(n) {
+    slides[cur].classList.remove('active');
+    dots[cur].classList.remove('active');
+    cur = n;
+    slides[cur].classList.add('active');
+    dots[cur].classList.add('active');
+  }
+
+  setInterval(() => goTo((cur + 1) % slides.length), 6000);
+</script>
+</body>
+</html>
