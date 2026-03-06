@@ -45,7 +45,8 @@
       text-decoration: none;
     }
     .nav-brand-swan {
-      font-size: 1.5rem; line-height: 1;
+      height: 44px; width: auto;
+      filter: brightness(0) invert(1);
     }
     .nav-brand-text {
       display: flex; flex-direction: column; line-height: 1.1;
@@ -102,8 +103,8 @@
     }
     .hero-label {
       font-family: 'Montserrat', sans-serif;
-      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.3em;
-      text-transform: uppercase; color: rgba(255,255,255,0.35);
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.3em;
+      text-transform: uppercase; color: rgba(255,255,255,0.65);
     }
     .hero-label-divider { width: 1px; height: 14px; background: rgba(255,255,255,0.15); }
 
@@ -171,9 +172,9 @@
     }
 
     .slide-desc {
-      font-size: 0.88rem; line-height: 1.7; font-weight: 300;
-      color: rgba(255,255,255,0.55);
-      max-width: 380px;
+      font-size: 1.05rem; line-height: 1.7; font-weight: 400;
+      color: rgba(255,255,255,0.82);
+      max-width: 420px;
       margin-bottom: 2.5rem;
     }
 
@@ -191,15 +192,15 @@
 
     .slide-sku {
       margin-top: 2rem;
-      font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
-      color: rgba(255,255,255,0.2);
+      font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
     }
 
     .slide-right {
       position: relative;
       display: flex; align-items: center; justify-content: center;
-      padding: 3rem;
-      overflow: hidden;
+      padding: 1rem 0 1rem 1rem;
+      overflow: visible;
     }
 
     /* Large watermark product number */
@@ -217,7 +218,7 @@
 
     .slide-bowl-img {
       position: relative; z-index: 2;
-      width: min(520px, 90%);
+      width: min(900px, 96%);
       filter: drop-shadow(0 30px 60px rgba(0,0,0,0.6));
       transition: transform 0.8s ease;
     }
@@ -419,7 +420,7 @@
 <!-- NAV -->
 <nav>
   <a class="nav-brand" href="index.html">
-    <span class="nav-brand-swan">🦢</span>
+    <img class="nav-brand-swan" src="images/ufc-logo-white.png" alt="United Food Co">
     <div class="nav-brand-text">
       <span class="nav-brand-name">United Food Co</span>
       <span class="nav-brand-sub">Asian Kitchen · Distributor Catalogue</span>
@@ -621,7 +622,7 @@
 
 <footer>
   <div class="footer-brand">
-    <span>🦢</span>
+    <img src="images/ufc-logo-black.png" alt="United Food Co" style="height:50px;width:auto;">
     <div>
       <div class="footer-brand-name">United Food Co</div>
       <div class="footer-brand-sub">unitedfoodco.nz · United Fisheries Ltd, Christchurch NZ</div>
