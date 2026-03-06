@@ -1,223 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dan Dan Noodles &mdash; United Food Co</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="ufc-product.css">
-  <style>:root{--accent:#C42B2B;}</style>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Dan Dan Noodles — United Food Co</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ufc-product.css">
+<style>:root{--accent:#C42B2B;}</style>
 </head>
 <body>
-
 <header class="page-header">
   <div class="ph-logo">
     <img class="ph-logo-img" src="images/ufc-logo-black.png" alt="United Food Co">
-    <div class="ph-logo-text">
-      <span class="ph-logo-name">United Food Co</span>
-      <span class="ph-logo-sub">Asian Kitchen — Product Spec Sheet</span>
-    </div>
+    <div class="ph-logo-text"><span class="ph-logo-name">United Food Co</span><span class="ph-logo-sub">Asian Kitchen — Product Spec</span></div>
   </div>
-  <div class="ph-title-block">
-    <div class="ph-eyebrow">Sichuan-Style &nbsp;&middot;&nbsp; Plant-Based &nbsp;&middot;&nbsp; SKU 9281</div>
+  <div class="ph-center">
+    <div class="ph-eyebrow">Sichuan-Style · Plant-Based · SKU 9281</div>
     <div class="ph-product-name">Dan Dan <span class="accent">Noodles</span></div>
-    <div class="ph-meta">
-      <span>20 &times; 308g bulk</span><span class="ph-meta-sep">&middot;</span>
-      <span>Cook from frozen</span><span class="ph-meta-sep">&middot;</span>
-      <span>Product of Vietnam</span><span class="ph-meta-sep">&middot;</span>
-      <span class="ph-meta-accent">24 month shelf life</span>
-      
-    </div>
+    <div class="ph-meta"><span>20 × 308g bulk</span><span class="ph-sep">·</span><span>Cook from frozen</span><span class="ph-sep">·</span><span>Product of Vietnam</span><span class="ph-sep">·</span><span class="ph-hi">24 month shelf life</span></div>
   </div>
   <div class="ph-actions">
-    <button class="ph-calc-btn" onclick="openCalc()"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" rx="1" stroke="white" stroke-width="1.5"/><path d="M4 5h8M4 8h4M4 11h3M10 9l2 2M12 9l-2 2" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg> Pricing Calculator</button>
-    <a class="ph-back" href="index.html">&larr; Catalogue</a>
+    <button class="btn btn-dark" onclick="openCalc()"><svg width="11" height="11" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" rx="1" stroke="white" stroke-width="1.5"/><path d="M4 5h8M4 8h4M4 11h3M10 9l2 2M12 9l-2 2" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg>Pricing Calculator</button>
+    <a class="btn btn-ghost" href="index.html">← Catalogue</a>
   </div>
 </header>
-
-<div class="spec-body">
-
-  <!-- LEFT: large bowl image -->
-  <div class="bowl-panel">
-    <img class="bowl-img" src="images/dandan-bowl.png" alt="Dan Dan Noodles">
+<main class="page-main">
+  <div class="bowl-col"><img class="bowl-img" src="images/dandan-bowl.png" alt="Dan Dan Noodles"></div>
+  <div class="data-col">
+    <div class="data-upper">
+      <div class="content-col">
+        <div class="content-section">
+          <span class="sec-label">Ingredients</span>
+          <p class="ingredients-text"><b>Ramen Noodles (67%)</b> [<b>wheat</b> flour, water, raising agent (500), colour (160a)], Water, Spinach, <b>Soy</b> Sauce [water, salt, soybeans, <b>wheat</b>, alcohol], Chilli Sauce [water, chilli, garlic, sugar, vinegar, modified tapioca starch (1442), salt], <b>Sesame</b> Oil, Ear Mushroom, Corn Starch, Refined <b>Soybean</b> Oil, <b>Soybean</b> Protein, Chilli Oil [soybean oil, chilli], <b>Sesame</b> Seeds, Sugar, Shallots, Ginger, Garlic, Onion, Sichuan Pepper, Salt.</p>
+        </div>
+        <div class="content-section">
+          <span class="sec-label">Allergens &amp; Dietary</span>
+          <div class="ad-wrap">
+            <div class="ad-group"><div class="ad-heading warn">⚠&nbsp; Contains Allergens</div><div class="tag-row"><span class="tag allergen">Wheat</span><span class="tag allergen">Gluten</span><span class="tag allergen">Soy</span><span class="tag allergen">Sesame</span></div></div>
+            <div class="ad-group"><div class="ad-heading ok">✓&nbsp; Dietary Information</div><div class="tag-row"><span class="tag dietary">Plant-Based</span><span class="tag dietary">Vegan</span><span class="tag dietary">Vegetarian</span></div></div>
+          </div>
+        </div>
+        <div class="content-section">
+          <span class="sec-label">Cooking Instructions</span>
+          <p class="cooking-text"><strong>Microwave — Cook from frozen:</strong> Remove from packaging and set aside the sachet of fried shallots. Place in a microwave safe dish, cover with a lid and heat on high (1000W) for 6 minutes. Sprinkle fried shallots over noodles before serving.</p>
+          <p class="cooking-note">Product to be cooked through before consumption.</p>
+        </div>
+      </div>
+      <div class="spec-col">
+        <div class="spec-section">
+          <span class="sec-label">Product Details</span>
+          <div class="kv"><span class="kv-k">Item Number</span><span class="kv-v">ORNSPDN20</span></div>
+          <div class="kv"><span class="kv-k">Short Code</span><span class="kv-v big">9281</span></div>
+          <div class="kv"><span class="kv-k">Barcode</span><span class="kv-v" style="font-family:'Courier New',monospace;font-size:0.58rem">9 414118 309343</span></div>
+          <div class="kv"><span class="kv-k">Pack Size</span><span class="kv-v">308g / unit</span></div>
+          <div class="kv"><span class="kv-k">Case</span><span class="kv-v">20 × 308g NET</span></div>
+          <div class="kv"><span class="kv-k">Pallet</span><span class="kv-v">48 ctns (12×4)</span></div>
+          <div class="kv"><span class="kv-k">Shelf Life</span><span class="kv-v">24 months</span></div>
+          <div class="kv"><span class="kv-k">Storage</span><span class="kv-v">≤ −18°C</span></div>
+          <div class="kv"><span class="kv-k">Origin</span><span class="kv-v">Vietnam</span></div>
+        </div>
+        <div class="spec-section">
+          <span class="sec-label">Nutrition Information</span>
+          <p class="nutri-note">Servings: 20 per pack · Serving Size: 308g</p>
+          <table class="nutri">
+            <thead><tr><th></th><th>Per Serving</th><th>Per 100g</th></tr></thead>
+            <tbody>
+              <tr><td>Energy</td><td>3690kJ</td><td>1200kJ</td></tr>
+              <tr><td>Protein</td><td>27.0g</td><td>8.8g</td></tr>
+              <tr><td>Fat, total</td><td>19.8g</td><td>6.4g</td></tr>
+              <tr class="sub"><td>&nbsp;— saturated</td><td>2.8g</td><td>0.9g</td></tr>
+              <tr><td>Carbohydrate</td><td>143.0g</td><td>46.4g</td></tr>
+              <tr class="sub"><td>&nbsp;— sugars</td><td>11.6g</td><td>3.8g</td></tr>
+              <tr><td>Sodium</td><td>900mg</td><td>292mg</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="data-lower">
+      <img class="box-img" src="images/dandan-box.png" alt="Packaging">
+      <div class="box-meta"><strong>Dan Dan Noodles</strong><br>SKU 9281 · ORNSPDN20 · 20×308g NET · 48 ctns/pallet · Keep frozen ≤ −18°C · Vietnam · V1.0 Oct 2025</div>
+    </div>
   </div>
-
-  <!-- RIGHT: info panel -->
-  <div class="info-panel">
-
-    <!-- 3 columns: ingredients / cooking / allergens+dietary -->
-    <div class="info-cols">
-
-      <div class="info-col">
-        <span class="sec-label">Ingredients</span>
-        <p class="ingredients-text"><b>Ramen Noodles (67%)</b> [<b>wheat</b> flour, water, raising agent (500), colour (160a)], Water, Spinach, <b>Soy Sauce</b> [water, salt, soybeans, <b>wheat</b>, alcohol], Chilli Sauce [water, chilli, garlic, sugar, vinegar, modified tapioca starch (1442), salt], <b>Sesame</b> Oil, Ear Mushroom, Corn Starch, Refined <b>Soybean</b> Oil, <b>Soybean</b> Protein, Chilli Oil [soybean oil, chilli], <b>Sesame</b> Seeds, Sugar, Shallots, Ginger, Garlic, Onion, Sichuan Pepper, Salt.</p>
-      </div>
-
-      <div class="info-col">
-        <span class="sec-label">Cooking Instructions</span>
-        <p class="cooking-text"><strong>Microwave &mdash; cook from frozen:</strong> Remove product from packaging and set aside the sachet of fried shallots. Place in a microwave safe dish, cover with a lid and heat on high (1000W) for 6 minutes. Sprinkle fried shallots over noodles before serving.<br><br><em style="font-size:0.65rem;color:#888">Product to be cooked through before consumption.</em></p>
-      </div>
-
-      <div class="info-col">
-        <span class="sec-label">Allergens &amp; Dietary</span>
-        <div class="ad-wrap">
-          <div class="ad-group">
-            <div class="ad-group-label allergen-lbl">&#9888; Contains Allergens</div>
-            <div class="tag-row"><span class="tag allergen">Wheat</span><span class="tag allergen">Gluten</span><span class="tag allergen">Soy</span><span class="tag allergen">Sesame</span></div>
-          </div>
-          <div class="ad-group">
-            <div class="ad-group-label dietary-lbl">&#10003; Dietary Information</div>
-            <div class="tag-row"><span class="tag dietary">Plant-Based</span><span class="tag dietary">Vegan</span><span class="tag dietary">Vegetarian</span></div>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- /info-cols -->
-
-    <!-- Bottom strip: product details + nutrition -->
-    <div class="spec-strip">
-
-      <div class="ss-col">
-        <span class="sec-label">Product Details</span>
-        <div class="kv-grid">
-          <div>
-      <div class="kv-row"><span class="kv-label">Item Number</span><span class="kv-value">ORNSPDN20</span></div>
-      <div class="kv-row"><span class="kv-label">Short Code</span><span class="kv-value accent">9281</span></div>
-      <div class="kv-row"><span class="kv-label">Pack Size</span><span class="kv-value">308g per unit</span></div>
-      <div class="kv-row"><span class="kv-label">Case</span><span class="kv-value">20 &times; 308g NET</span></div></div>
-          <div>
-      <div class="kv-row"><span class="kv-label">Barcode</span><span class="kv-value" style="font-family:'Courier New',monospace;font-size:0.65rem;">9 414118 309343</span></div>
-      <div class="kv-row"><span class="kv-label">Pallet</span><span class="kv-value">48 ctns (12&times;4)</span></div>
-      <div class="kv-row"><span class="kv-label">Shelf Life</span><span class="kv-value">24 months</span></div>
-      <div class="kv-row"><span class="kv-label">Storage &amp; Origin</span><span class="kv-value">&le; &minus;18&deg;C &middot; Vietnam</span></div></div>
-        </div>
-      </div>
-
-      <div class="ss-col">
-        <span class="sec-label">Nutrition Information</span>
-        <p class="nutri-sub">Servings per pack: 20 &nbsp;&middot;&nbsp; Serving Size: 308g</p>
-        <table class="nutri">
-          <thead><tr><th></th><th>Per Serving</th><th>Per 100g</th></tr></thead>
-          <tbody><tr><td>Energy</td><td>3690kJ</td><td>1200kJ</td></tr>
-<tr><td>Protein</td><td>27.0g</td><td>8.8g</td></tr>
-<tr><td>Fat, total</td><td>19.8g</td><td>6.4g</td></tr>
-<tr class=sub><td>&nbsp;- saturated</td><td>2.8g</td><td>0.9g</td></tr>
-<tr><td>Carbohydrate</td><td>143.0g</td><td>46.4g</td></tr>
-<tr class=sub><td>&nbsp;- sugars</td><td>11.6g</td><td>3.8g</td></tr>
-<tr><td>Sodium</td><td>900mg</td><td>292mg</td></tr></tbody>
-        </table>
-      </div>
-
-    </div><!-- /spec-strip -->
-
-  </div><!-- /info-panel -->
-
-</div><!-- /spec-body -->
-
+</main>
 <footer class="page-footer">
-  <span class="pf-left">United Food Co <span>&middot;</span> Asian Kitchen <span>&middot;</span> Product Specification</span>
-  <span class="pf-right">United Fisheries Ltd &middot; Christchurch, New Zealand &middot; unitedfoodco.nz &middot; V1.0 Oct 2025</span>
+  <span class="pf-l">United Food Co <span>·</span> Asian Kitchen <span>·</span> Product Specification</span>
+  <span class="pf-r">United Fisheries Ltd · Christchurch, New Zealand · unitedfoodco.nz</span>
 </footer>
-
-
 <div class="calc-overlay" id="calcOverlay" onclick="if(event.target===this)closeCalc()">
   <div class="calc-modal">
-    <div class="calc-modal-header">
-      <div>
-        <div class="calc-modal-title">Pricing Calculator</div>
-        <div class="calc-modal-sub">Dan Dan Noodles &nbsp;·&nbsp; SKU 9281</div>
-      </div>
-      <button class="calc-close" onclick="closeCalc()">&#x2715;</button>
+    <div class="calc-head">
+      <div><div class="calc-title">Pricing Calculator</div><div class="calc-sub">Dan Dan Noodles · SKU 9281</div></div>
+      <button class="calc-x" onclick="closeCalc()">✕</button>
     </div>
-    <div class="calc-modal-body">
-
-      <div class="calc-section-head">Product Costs</div>
-      <div class="cf">
-        <label class="cf-label">Cost Price (ex-GST)</label>
-        <div class="cf-wrap"><span class="cf-pre">$</span><input type="number" id="cost" placeholder="0.00" min="0" step="0.01"></div>
-      </div>
-      <div class="cf">
-        <label class="cf-label">Freight &amp; Landing</label>
-        <div class="cf-wrap"><span class="cf-pre">$</span><input type="number" id="freight" placeholder="0.00" min="0" step="0.01"></div>
-      </div>
-
-      <div class="calc-section-head">Labour Cost</div>
-      <div class="cf">
-        <label class="cf-label">Time per Serve</label>
-        <div class="cf-wrap"><input type="number" id="labour-mins" class="bare" placeholder="5" min="0" step="0.5"><span class="cf-suf">min</span></div>
-      </div>
-      <div class="cf">
-        <label class="cf-label">Staff Hourly Rate</label>
-        <div class="cf-wrap"><span class="cf-pre">$</span><input type="number" id="labour-rate" placeholder="23.15" min="0" step="0.05" value="23.15"></div>
-      </div>
-
-      <div class="calc-section-head">Pricing &amp; Margin</div>
-      <div class="cf">
-        <label class="cf-label">Target Gross Margin</label>
-        <div class="cf-wrap"><input type="number" id="margin" class="bare" placeholder="35" value="35" min="0" max="99.9" step="0.5"><span class="cf-suf">%</span></div>
-      </div>
-      <div class="cf">
-        <div class="gst-row">
-          <div>
-            <div class="gst-lbl">Include GST</div>
-            <div class="gst-sub">New Zealand 15%</div>
-          </div>
-          <label class="toggle"><input type="checkbox" id="gst-toggle" checked><span class="toggle-track"></span></label>
-        </div>
-      </div>
-
+    <div class="calc-body">
+      <div class="calc-grp-head">Product Costs</div>
+      <div class="cf"><label class="cf-lbl">Cost Price (ex-GST)</label><div class="cf-wrap"><span class="cf-pre">$</span><input type="number" id="c-cost" placeholder="0.00" min="0" step="0.01"></div></div>
+      <div class="cf"><label class="cf-lbl">Freight &amp; Landing</label><div class="cf-wrap"><span class="cf-pre">$</span><input type="number" id="c-freight" placeholder="0.00" min="0" step="0.01"></div></div>
+      <div class="calc-grp-head">Labour Cost</div>
+      <div class="cf"><label class="cf-lbl">Time per serve (minutes)</label><div class="cf-wrap"><input type="number" id="c-labmins" class="bare" placeholder="5" min="0" step="0.5"><span class="cf-suf">min</span></div></div>
+      <div class="cf"><label class="cf-lbl">Staff Hourly Rate</label><div class="cf-wrap"><span class="cf-pre">$</span><input type="number" id="c-labrate" placeholder="23.15" value="23.15" min="0" step="0.05"></div></div>
+      <div class="calc-grp-head">Pricing &amp; Margin</div>
+      <div class="cf"><label class="cf-lbl">Target Gross Margin</label><div class="cf-wrap"><input type="number" id="c-margin" class="bare" value="35" min="0" max="99.9" step="0.5"><span class="cf-suf">%</span></div></div>
+      <div class="cf"><div class="gst-row"><div><div class="gst-lbl">Include GST</div><div class="gst-sub">New Zealand 15%</div></div><label class="toggle"><input type="checkbox" id="c-gst" checked><span class="toggle-track"></span></label></div></div>
       <button class="calc-go" id="calc-btn">Calculate Sell Price</button>
-
-      <div class="calc-results-wrap">
-        <div class="results-grid" id="calc-results">
-          <div class="cr-placeholder">Enter your cost price above and click Calculate</div>
-        </div>
-      </div>
-
+      <div class="calc-results" id="calc-results"><div class="res-placeholder">Enter cost price above and click Calculate</div></div>
     </div>
   </div>
 </div>
-
 <script>
-
-function openCalc(){ document.getElementById('calcOverlay').classList.add('open'); }
-function closeCalc(){ document.getElementById('calcOverlay').classList.remove('open'); }
-document.addEventListener('keydown', e => { if(e.key==='Escape') closeCalc(); });
-document.getElementById('calc-btn').addEventListener('click', function(){
-  const cost     = parseFloat(document.getElementById('cost').value)||0;
-  const freight  = parseFloat(document.getElementById('freight').value)||0;
-  const labMins  = parseFloat(document.getElementById('labour-mins').value)||0;
-  const labRate  = parseFloat(document.getElementById('labour-rate').value)||0;
-  const margin   = Math.min(parseFloat(document.getElementById('margin').value)||0, 99.9);
-  const gst      = document.getElementById('gst-toggle').checked;
-  const res      = document.getElementById('calc-results');
-  if(cost<=0){ res.innerHTML='<div class="cr-placeholder">Enter a cost price above zero</div>'; return; }
-  const labour    = (labMins/60)*labRate;
-  const landed    = cost+freight;
-  const totalCost = landed+labour;
-  const sellEx    = totalCost/(1-margin/100);
-  const mAmt      = sellEx-totalCost;
-  const gstAmt    = gst ? sellEx*0.15 : 0;
-  const total     = sellEx+gstAmt;
-  const fmt = n => '$'+n.toFixed(2);
-  const pct = n => n.toFixed(1)+'%';
-  res.innerHTML = `
-    <div class="cr-row"><span>Product cost</span><span>${fmt(cost)}</span></div>
-    <div class="cr-row"><span>Freight & landing</span><span>${fmt(freight)}</span></div>
-    <div class="cr-row cr-sep"><span>Labour (${labMins}min @ ${fmt(labRate)}/hr)</span><span>${fmt(labour)}</span></div>
-    <div class="cr-row"><span>Total landed cost</span><span>${fmt(totalCost)}</span></div>
-    <div class="cr-row cr-sep"><span>Gross margin (${pct(margin)})</span><span>${fmt(mAmt)}</span></div>
-    <div class="cr-row"><span>Sell price (ex-GST)</span><span>${fmt(sellEx)}</span></div>
-    ${gst ? `<div class="cr-row cr-sep"><span>GST (15%)</span><span>${fmt(gstAmt)}</span></div>` : ''}
-    <div class="cr-total"><span>Total Sell Price</span><span>${fmt(total)}</span></div>
-  `;
+function openCalc(){document.getElementById('calcOverlay').classList.add('open');}
+function closeCalc(){document.getElementById('calcOverlay').classList.remove('open');}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeCalc();});
+document.getElementById('calc-btn').addEventListener('click',function(){
+  const cost=parseFloat(document.getElementById('c-cost').value)||0;
+  const freight=parseFloat(document.getElementById('c-freight').value)||0;
+  const labMins=parseFloat(document.getElementById('c-labmins').value)||0;
+  const labRate=parseFloat(document.getElementById('c-labrate').value)||0;
+  const margin=Math.min(parseFloat(document.getElementById('c-margin').value)||0,99.9);
+  const gst=document.getElementById('c-gst').checked;
+  const res=document.getElementById('calc-results');
+  if(cost<=0){res.innerHTML='<div class="res-placeholder">Enter a cost price above zero</div>';return;}
+  const labour=(labMins/60)*labRate,landed=cost+freight,totalC=landed+labour;
+  const sellEx=totalC/(1-margin/100),mAmt=sellEx-totalC;
+  const gstAmt=gst?sellEx*0.15:0,total=sellEx+gstAmt;
+  const fmt=n=>'$'+n.toFixed(2),pct=n=>n.toFixed(1)+'%';
+  res.innerHTML='<div class="res-grid">'
+    +'<div class="cr"><span>Product cost</span><span>'+fmt(cost)+'</span></div>'
+    +'<div class="cr"><span>Freight &amp; landing</span><span>'+fmt(freight)+'</span></div>'
+    +'<div class="cr sep"><span>Labour ('+labMins+'min @ '+fmt(labRate)+'/hr)</span><span>'+fmt(labour)+'</span></div>'
+    +'<div class="cr"><span>Total landed cost</span><span>'+fmt(totalC)+'</span></div>'
+    +'<div class="cr sep"><span>Margin ('+pct(margin)+')</span><span>'+fmt(mAmt)+'</span></div>'
+    +'<div class="cr"><span>Sell price ex-GST</span><span>'+fmt(sellEx)+'</span></div>'
+    +(gst?'<div class="cr sep"><span>GST (15%)</span><span>'+fmt(gstAmt)+'</span></div>':'')
+    +'<div class="cr-total"><span>Total Sell Price</span><span>'+fmt(total)+'</span></div>'
+    +'</div>';
 });
-['cost','freight','labour-mins','labour-rate','margin'].forEach(id => {
-  const el = document.getElementById(id);
-  if(el) el.addEventListener('keydown', e => { if(e.key==='Enter') document.getElementById('calc-btn').click(); });
+['c-cost','c-freight','c-labmins','c-labrate','c-margin'].forEach(id=>{
+  const el=document.getElementById(id);
+  if(el)el.addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('calc-btn').click();});
 });
-
 </script>
 </body>
 </html>
